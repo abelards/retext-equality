@@ -1,11 +1,11 @@
 - type: and
   considerate:
-    primary: a
-    primaries: a
-    replica: b
-    replicas: b
+    principal: a
+    principaux: a
+    répliques: b
+    répliques: b
   inconsiderate:
-    master: a
-    masters: a
-    slave: b
-    slaves: b
+    maître: a
+    maîtres: a
+    esclaves: b
+    esclaves: b
