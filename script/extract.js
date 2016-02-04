@@ -151,7 +151,7 @@ data = data.map(patch);
 data.forEach(function (entry) {
     if (entry.type !== 'simple' && entry.categories.length < 2) {
         throw new Error(
-            'Use `type: simple` for single entries with one category: ' +
+            'Utilisez `type: simple` pour les entrées uniques dans une catégorie : ' +
             Object.keys(entry.inconsiderate).join(', ')
         );
     }
@@ -162,19 +162,17 @@ data.forEach(function (entry) {
 
             if (/-/.test(inconsiderate)) {
                 throw new Error(
-                    'Refrain from using dashes inside inconsiderate ' +
-                    'terms: they’ll be stripped when looking for ' +
-                    'words: ' +
+                    "Évitez d'utiliser des tirets dans les termes maladroits :" +
+                    "ils seront retirés quand on recherche des mots : " +
                     Object.keys(entry.inconsiderate).join(', ')
                 );
             }
 
             if (/['’]/.test(inconsiderate) && !entry.apostrophe) {
                 throw new Error(
-                    'Refrain from using apostrophes inside ' +
-                    'inconsiderate terms, they’ll be stripped ' +
-                    'when looking for words (or use `apostrophe: ' +
-                    'true`): ' +
+                    "Évitez d'utiliser des apostrophes dans les termes maladroits :" +
+                    "ils seront retirés quand on recherche des mots" +
+                    "(sinon, veuillez utiliser `apostrophe: true`) :" +
                     Object.keys(entry.inconsiderate).join(', ')
                 );
             }
@@ -186,7 +184,7 @@ var duplicates = duplicated(phrases);
 
 if (duplicates.length) {
     throw new Error(
-        'Refrain from multiple entries:\n' +
+        "Évitez d'entrer des termes en double :\n" +
         '  ' + duplicates.join(', ')
     );
 }
